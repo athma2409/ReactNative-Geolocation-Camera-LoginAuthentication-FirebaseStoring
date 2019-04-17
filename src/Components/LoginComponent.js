@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TextInput,Button,ToastAndroid } from 'react-native';
-import {loginUser} from '../Services/services'
+import {loginUser} from '../Services/services';
+import Geolocation from './Geolocation';
 const Toast = (props) => {
     if (props.visible) {
       ToastAndroid.showWithGravityAndOffset(
@@ -35,9 +36,12 @@ export default class LoginComponent extends Component {
     login(){
         loginUser(this.state.user).then(result=>{
             this.setState({message:'User Logged Successfully',visible:true});
+            this.props.navigation.navigate('Profile');
         }).catch(err=>{
             this.setState({message:err.message,visible:true});
         });
+
+
     }
     handleChange(e,fieldName){
         let currentState=this.state;
@@ -50,7 +54,6 @@ export default class LoginComponent extends Component {
             <View style={styles.container}>
             <Text style={styles.welcome}>Welcome to Bhilwara Attendence App</Text>
             <Text style={styles.welcome}>Login</Text>
-            
                 <TextInput
                     style={styles.input}
                     placeholder='Email'
@@ -74,6 +77,8 @@ export default class LoginComponent extends Component {
                     title='Login'
                     onPress={this.login}
                 />
+            <Geolocation />
+
     <Toast visible={this.state.visible} message={this.state.message} />
             </View>
 

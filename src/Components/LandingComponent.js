@@ -18,6 +18,8 @@ export default class LandingComponent extends Component {
                 <Button title="Landing" onPress={() => this.props.navigation.navigate('LandingComponent')} />
                 <Button title="Login" onPress={() => this.props.navigation.navigate('LoginComponent')} />
                 <Button title="Register" onPress={() => this.props.navigation.navigate('RegisterComponent')} />
+                <Button title="Profile" onPress={() => this.props.navigation.navigate('Profile')} />
+
             </View>
 
         )

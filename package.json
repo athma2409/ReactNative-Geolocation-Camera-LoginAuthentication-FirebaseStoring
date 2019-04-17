@@ -10,7 +10,10 @@
     "firebase": "^5.9.4",
     "react": "16.8.3",
     "react-native": "0.59.4",
+    "react-native-camera": "^2.5.0",
     "react-native-gesture-handler": "^1.1.0",
+    "react-native-get-location": "^1.1.2",
+    "react-native-location": "^2.2.0",
     "react-navigation": "^3.8.1"
   },
   "devDependencies": {
